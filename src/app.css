@@ -24,6 +24,10 @@ Button.-primary {
     font-size: 18;
 }
 
+StackLayout.primary {
+    margin-top: 30;
+}
+
 .btn {
     background: purple;
     border-width: 1;
