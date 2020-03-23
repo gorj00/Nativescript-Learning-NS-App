@@ -1,8 +1,27 @@
-<StackLayout>
-    <Label
-        *ngFor="let challenge of challenges"
-        class="title"
-        [text]="challenge"
-        horizontalAlignment="center"
-    ></Label>
-</StackLayout>
+<!-- ScrollView - Entire list rendered - costs performance of the app -->
+<!-- <ScrollView>
+    <StackLayout>
+        <Label
+            *ngFor="let challenge of challenges"
+            class="title"
+            [text]="challenge"
+            horizontalAlignment="center"
+        ></Label>
+    </StackLayout>
+</ScrollView> -->
+<!-- Virtualization renders that which is viisble - better performance -->
+<!-- Looks for let-xxx properties, item, index names are mandatory (items above) -->
+<ListView
+    [items]="challenges"
+    (itemTap)="onItemTap($event)"
+    iosEstimatedRowHeight="75"
+>
+    <ng-template let-challenge="item" let-i="index">
+        <GridLayout rows="40,30" columns="50,*">
+            <Label [text]="i + 1" row="0" col="0" rowSpan="2"></Label>
+            <Label [text]="challenge" row="0" col="1"></Label>
+            <Label text="Item content row 2" row="1" col="1"></Label>
+        </GridLayout>
+    </ng-template>
+</ListView>
+

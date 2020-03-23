@@ -21,6 +21,8 @@ The following CSS rule changes the font size of all Buttons that have the
 "-primary" class modifier.
 */
 
+GridLayout.primary,
+FlexboxLayout.primary,
 StackLayout.primary {
     margin-top: 30;
 }
