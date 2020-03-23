@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { ItemEventData } from 'tns-core-modules/ui/list-view';
 @Component({
     selector: 'ns-current-challenge',
@@ -7,5 +7,4 @@ import { ItemEventData } from 'tns-core-modules/ui/list-view';
 })
 
 export class CurrentChallengeComponent {
-    @Input() challengeTitle = '';
 }

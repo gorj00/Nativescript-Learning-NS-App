@@ -11,6 +11,8 @@ import { FlexboxComponent } from './layouts/flexbox/flexbox.component';
 import { GridComponent } from './layouts/grid/grid.component';
 import { AbsoluteComponent } from './layouts/absolute/absolute.component';
 import { ChallengeEditComponent } from './challenges/challenge-edit/challenge-edit.component';
+import { AuthComponent } from './auth/auth.component';
+import { TodayComponent } from './challenges/today/today.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -35,6 +37,8 @@ import { ChallengeEditComponent } from './challenges/challenge-edit/challenge-ed
         GridComponent,
         AbsoluteComponent,
         ChallengeEditComponent,
+        AuthComponent,
+        TodayComponent,
     ],
     providers: [],
     schemas: [
