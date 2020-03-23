@@ -20,9 +20,6 @@ This is where the vast majority of your CSS code goes. */
 The following CSS rule changes the font size of all Buttons that have the
 "-primary" class modifier.
 */
-Button.-primary {
-    font-size: 18;
-}
 
 StackLayout.primary {
     margin-top: 30;
@@ -33,10 +30,9 @@ StackLayout.primary {
     border-width: 1;
     border-color: purple;
     color: white;
-    width: 250;
-    padding: 5 10;
+    width: 100%;
     border-radius: 30%;
-    margin: 5 0;
+    height: 25;
 }
 
 
