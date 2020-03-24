@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { RouterExtensions } from 'nativescript-angular/router';
+// import { Router } from '@angular/router';
 
 @Component({
   selector: 'ns-auth',
@@ -8,11 +9,14 @@ import { Router } from '@angular/router';
 })
 export class AuthComponent implements OnInit {
 
-  constructor(private router: Router) { }
+// constructor(private router: Router) { }
+// wrapper around Angular router
+  constructor(private router: RouterExtensions) { }
 
-  onSignIn() {
-    this.router.navigate(['/today']);
-  }
+//   onSignIn() {
+//       // Creates new stack of pages
+//     this.router.navigate(['/today'], { clearHistory: true });
+//   }
 
   ngOnInit(): void {
   }

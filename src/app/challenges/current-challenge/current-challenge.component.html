@@ -1,8 +1,14 @@
-<!-- <Label text="challengeTitle"></Label> -->
+<ActionBar title="Current challenge" (loaded)="onLoadedActionBar()">
+    <!-- iOS only - text="Back" -->
+    <!-- Android only - android.systemIcon="ic_menu_back " -->
+    <NavigationButton text="Back" android.systemIcon="ic_menu_back">
+    </NavigationButton>
+</ActionBar>
 <StackLayout>
     <Label
         class="title"
         text="The current challenge"
         horizontalAlignment="center"
     ></Label>
+    <Button text="edit" (tap)="onEdit()"></Button>
 </StackLayout>

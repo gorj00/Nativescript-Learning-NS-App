@@ -29,12 +29,15 @@ StackLayout.primary {
 
 .btn {
     background: purple;
-    border-width: 1;
+    border-width: 5;
     border-color: purple;
     color: white;
-    width: 100%;
+    font-size: 16;
+    width: 90%;
     border-radius: 30%;
-    height: 25;
+    height: 45;
+    /* padding: 15;
+    margin: 15; */
 }
 
 

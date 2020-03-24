@@ -1,1 +1,10 @@
-<Button text="auth works!" class="btn btn-primary" (tap)="onSignIn()"></Button>
+<StackLayout>
+    <!-- NS alternative to routerLink, creates new stack of pages (cannot return back) -->
+    <!-- Directive approach vs logic approach (tap)="onSignIn()" inside Button -->
+    <Button
+        text="auth works!"
+        class="btn btn-primary"
+        nsRouterLink="/today"
+        [clearHistory]="true"
+    ></Button>
+</StackLayout>
