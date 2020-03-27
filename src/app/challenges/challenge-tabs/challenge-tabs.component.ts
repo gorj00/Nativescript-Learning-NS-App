@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterExtensions } from 'nativescript-angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Page } from 'tns-core-modules/ui/page';
 
 @Component({
   selector: 'ns-challenge-tabs',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChallengeTabsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: RouterExtensions,
+              private active: ActivatedRoute,
+              private page: Page) { }
 
   ngOnInit(): void {
+    this.router.navigate([
+        {
+            outlets:  {
+                'current-challenge': ['current-challenge'],
+                'today': ['today']
+                // Would work too...
+                // 'today': ['today']
+            }
+        }],
+        {
+            relativeTo: this.active
+        }
+    );
+    // To hide the second ActioBar - doesn't work
+    // Must use router-outlet instead of page-router-outlet and wrap normal router-outlets to StackLayouts and put *tabItem directive on them
+    // this.page.actionBarHidden = true;
   }
 
 }
