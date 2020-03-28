@@ -2,6 +2,7 @@ import { Component, Input, OnInit} from '@angular/core';
 // To detect platform
 import { isAndroid, isIOS, Page } from 'tns-core-modules/ui/page';
 import { RouterExtensions } from 'nativescript-angular/router';
+import { UIService } from '../../ui.service';
 
 // Globally available to Nativescript
 declare var android: any;
@@ -15,7 +16,13 @@ export class ActionBarComponent implements OnInit {
     @Input() title: string;
     @Input() showBackButton = true;
 
-    constructor(private page: Page, private router: RouterExtensions) { }
+    constructor(private page: Page,
+                private router: RouterExtensions,
+                private uiService: UIService) { }
+
+    get android() {
+        return isAndroid;
+    }
 
     // behaves like a property (canGoBack instead of canGoBack())
     get canGoBack() {
@@ -34,6 +41,10 @@ export class ActionBarComponent implements OnInit {
                 backButtton.setColorFilter(android.graphics.Color.parseColor('#171717'), (<any>android.graphics).PorterDuff.Mode.SRC_ATOP);
             }
         }
+    }
+
+    onToggleMenu() {
+        this.uiService.toggleDrawer();
     }
 
     ngOnInit(): void {

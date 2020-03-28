@@ -40,4 +40,12 @@ StackLayout.primary {
     margin: 15; */
 }
 
+.drawer-container {
+    background: linear-gradient(140deg, #5c3fa0, rgb(218, 8, 61));
+    padding-top: 50;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+}
+
 
