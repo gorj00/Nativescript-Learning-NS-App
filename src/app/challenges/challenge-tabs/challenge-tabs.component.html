@@ -6,7 +6,11 @@
     <Label text="Tab 2"></Label>
   </StackLayout>
 </TabView> -->
-<TabView androidTabsPosition="bottom">
+<TabView
+  androidTabsPosition="bottom"
+  androidSelectedTabHighlightColor="purple"
+  selectedTabTextColor="purple"
+>
   <StackLayout *tabItem="{ title: 'Today' }">
     <router-outlet name="today"></router-outlet>
   </StackLayout>
