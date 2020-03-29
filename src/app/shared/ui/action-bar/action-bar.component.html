@@ -9,13 +9,13 @@
   ></NavigationButton>
   <!-- Android specific menu icon (left) -->
   <NavigationButton
-    *ngIf="android"
+    *ngIf="android && hasMenu"
     icon="res://menu_black"
     (tap)="onToggleMenu()"
   ></NavigationButton>
   <!-- iOS specific menu icon (left), Android (right) -->
   <ActionItem
-    *ngIf="!android"
+    *ngIf="!android && hasMenu"
     ios.position="left"
     (tap)="onToggleMenu()"
   >

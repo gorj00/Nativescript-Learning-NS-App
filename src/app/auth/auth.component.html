@@ -1,10 +1,14 @@
+<ns-action-bar
+    title="Login"
+    [showBackButton]="false"
+    [hasMenu]="false"
+></ns-action-bar>
 <StackLayout>
-    <!-- NS alternative to routerLink, creates new stack of pages (cannot return back) -->
-    <!-- Directive approach vs logic approach (tap)="onSignIn()" inside Button -->
     <Button
-        text="auth works!"
+        text="Login"
         class="btn"
         nsRouterLink="/challenges"
         [clearHistory]="true"
     ></Button>
 </StackLayout>
+ 

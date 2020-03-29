@@ -34,6 +34,10 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
         console.log(challengeDescription);
     }
 
+    onLogout() {
+        this.uiService.toggleDrawer();
+    }
+
     ngOnInit() {
         this.drawerSub = this.uiService.drawerState.subscribe(() => {
             if (this.drawer) this.drawer.toggleDrawerState();
