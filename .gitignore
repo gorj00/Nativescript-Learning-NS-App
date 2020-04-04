@@ -3,9 +3,6 @@ hooks/
 node_modules/
 platforms/
 
-# Markdown
-*.md
-
 # NativeScript Template
 *.js.map
 *.js
