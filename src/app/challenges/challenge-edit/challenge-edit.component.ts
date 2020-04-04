@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PageRoute } from 'nativescript-angular/router';
 
 @Component({
     selector: 'ns-challenge-edit',
@@ -6,10 +8,28 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./challenge-edit.component.css']
 })
 export class ChallengeEditComponent implements OnInit {
- 
-    constructor() { }
+    // Possible to retrieve the paramater as in a web Angular app (subscribing to paramMap)
+    isCreating = true;
 
+    constructor(private activatedRoute: ActivatedRoute,
+                private pageRoute: PageRoute) { }
+
+    // When going back to this page, page is cached, not run with ngOnInit (calling subscribtion therefore not available)
     ngOnInit(): void {
+        // this.activatedRoute.paramMap.subscribe(paramMap => {
+        //     console.log(paramMap.get('mode'));
+        // });
+
+        // Whenever this page is active (cached or created)
+        this.pageRoute.activatedRoute.subscribe(activatedRoute => {
+            activatedRoute.paramMap.subscribe(paramMap => {
+                if (!paramMap.has('mode')) {
+                    this.isCreating = true;
+                } else {
+                    this.isCreating = paramMap.get('mode') !== 'edit';
+                }
+            });
+        });
     }
 
 }
