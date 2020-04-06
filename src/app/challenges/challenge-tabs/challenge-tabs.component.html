@@ -4,9 +4,10 @@
   selectedTabTextColor="purple"
 >
   <StackLayout *tabItem="{ title: 'Today' }">
-    <router-outlet name="today"></router-outlet>
+    <!-- Action bar rerendered only with a new page -->
+    <page-router-outlet name="today"></page-router-outlet>
   </StackLayout>
   <StackLayout *tabItem="{ title: 'Current Challenge' }">
-    <router-outlet name="current-challenge"></router-outlet>
+    <page-router-outlet name="current-challenge"></page-router-outlet>
   </StackLayout>
 </TabView>

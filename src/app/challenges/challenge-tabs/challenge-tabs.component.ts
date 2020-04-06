@@ -28,9 +28,11 @@ export class ChallengeTabsComponent implements OnInit {
             relativeTo: this.active
         }
     );
-    // To hide the second ActioBar - doesn't work
+    // To hide the second ActioBar
     // Must use router-outlet instead of page-router-outlet and wrap normal router-outlets to StackLayouts and put *tabItem directive on them
-    // this.page.actionBarHidden = true;
+    // Action bar doesn't change title, rerendered only with a new page, therefore, must use page-router-outlet
+    // Now, there are two action bars - we hide the second one
+    this.page.actionBarHidden = true;
   }
 
 }
