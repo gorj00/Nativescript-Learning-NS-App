@@ -1,35 +1,35 @@
-import { NgModule } from "@angular/core";
-import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { Routes } from "@angular/router";
-import { ChallengeTabsComponent } from "./challenge-tabs/challenge-tabs.component";
-import { TodayComponent } from "./today/today.component";
-import { CurrentChallengeComponent } from "./current-challenge/current-challenge.component";
+import { NgModule } from '@angular/core';
+import { NativeScriptRouterModule } from 'nativescript-angular/router';
+import { Routes } from '@angular/router';
+import { ChallengeTabsComponent } from './challenge-tabs/challenge-tabs.component';
+import { TodayComponent } from './today/today.component';
+import { CurrentChallengeComponent } from './current-challenge/current-challenge.component';
 
 const routes: Routes = [
   {
-    path: "tabs",
+    path: 'tabs',
     component: ChallengeTabsComponent,
     children: [
       {
-        path: "today",
+        path: 'today',
         component: TodayComponent,
-        outlet: "today",
+        outlet: 'today',
       },
       {
-        path: "current-challenge",
+        path: 'current-challenge',
         component: CurrentChallengeComponent,
-        outlet: "current-challenge",
+        outlet: 'current-challenge',
       },
     ],
   },
   {
-    path: ":mode",
+    path: ':mode',
     loadChildren: () =>
-      import("./challenge-edit/challenge-edit.module").then(
+      import('./challenge-edit/challenge-edit.module').then(
         (m) => m.ChallengeEditModule
       ),
   },
-  { path: "", redirectTo: "/challenges/tabs", pathMatch: "full" },
+  { path: '', redirectTo: '/challenges/tabs', pathMatch: 'full' },
 ];
 
 @NgModule({
