@@ -5,7 +5,7 @@ import { ActionBarComponent } from './ui/action-bar/action-bar.component';
 
 @NgModule({
   // NativeScriptCommonModule for ngId and such ...
-  // NativeScriptRouterModule FOR routing in declared component elements
+  // NativeScriptRouterModule for routing in declared component elements
   imports: [NativeScriptCommonModule, NativeScriptRouterModule],
   declarations: [ActionBarComponent],
   exports: [ActionBarComponent],

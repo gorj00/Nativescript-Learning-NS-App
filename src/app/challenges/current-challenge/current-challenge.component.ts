@@ -22,7 +22,7 @@ export class CurrentChallengeComponent {
 
   onChangeStatus() {
     // To open a modal, loads a component
-    // DayModalComponent is not by a selector or tag, Angular doesn't know it is supposed to create it → entryComponents in app.module
+    // DayModalComponent is not created by a selector or tag, Angular doesn't know it is supposed to create it → entryComponents in app.module
     this.modalDialog
       .showModal(DayModalComponent, {
         fullscreen: true,

@@ -14,7 +14,7 @@ export class UIService {
     this._drawerState.next();
   }
 
-  // So the entire app with tabs is replaced bny the modal, not just the current component
+  // So the entire app with tabs is replaced by the modal, not just the current component
   setRootVCRef(vcRef: ViewContainerRef) {
     this._rootVCRef = vcRef;
   }

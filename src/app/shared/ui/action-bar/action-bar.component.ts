@@ -25,7 +25,7 @@ export class ActionBarComponent implements OnInit {
     return isAndroid;
   }
 
-  // behaves like a property (canGoBack instead of canGoBack())
+  // Behaves like a property (canGoBack instead of canGoBack())
   get canGoBack() {
     return this.router.canGoBack() && this.showBackButton;
   }

@@ -14,7 +14,7 @@ export class ChallengeEditComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private pageRoute: PageRoute) {}
 
-  // When going back to this page, page is cached, not run with ngOnInit (calling subscribtion therefore not available)
+  // When going back to this page, page is cached, not run with ngOnInit (calling subscription therefore not available)
   ngOnInit(): void {
     // this.activatedRoute.paramMap.subscribe(paramMap => {
     //     console.log(paramMap.get('mode'));
