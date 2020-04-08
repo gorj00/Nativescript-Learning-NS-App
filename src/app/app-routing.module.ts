@@ -1,41 +1,19 @@
-import { NgModule } from "@angular/core";
-import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { Routes } from "@angular/router";
-import { AuthComponent } from "./auth/auth.component";
-import { TodayComponent } from "./challenges/today/today.component";
-import { CurrentChallengeComponent } from "./challenges/current-challenge/current-challenge.component";
-import { ChallengeEditComponent } from "./challenges/challenge-edit/challenge-edit.component";
-import { ChallengeTabsComponent } from "./challenges/challenge-tabs/challenge-tabs.component";
+import { NgModule } from '@angular/core';
+import { NativeScriptRouterModule } from 'nativescript-angular/router';
+import { Routes } from '@angular/router';
+import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
-    { path: '', component: AuthComponent },
-    // { path: 'edit-challenge', component: ChallengeEditComponent },
-    {
-        path: 'challenges',
-        children: [
-            {
-                path: 'tabs', component: ChallengeTabsComponent,
-                children: [
-                    {
-                        path: 'today', component: TodayComponent,
-                        outlet: 'today'
-                    },
-                    {
-                        path: 'current-challenge',
-                        component: CurrentChallengeComponent,
-                        outlet: 'current-challenge'
-                    },
-                ]
-            },
-            // Passing data in a parameter
-            { path: ':mode', component: ChallengeEditComponent },
-            { path: '', redirectTo: '/challenges/tabs', pathMatch: 'full' }
-        ]  
-    }
+  { path: '', component: AuthComponent },
+  {
+    path: 'challenges',
+    loadChildren: () =>
+      import('./challenges/challenges.module').then((m) => m.ChallengesModule),
+  },
 ];
 
 @NgModule({
-    imports: [NativeScriptRouterModule.forRoot(routes)],
-    exports: [NativeScriptRouterModule]
+  imports: [NativeScriptRouterModule.forRoot(routes)],
+  exports: [NativeScriptRouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
