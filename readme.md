@@ -150,6 +150,35 @@ ngOnInit(): void {
     );
 ```
 
+### Side Drawer
+
+### Hiding ActionBar
+```typescript
+// Must inject page to constructor
+
+this.page.actionBarHidden = true;
+```
+
+### Show/Not-show Back Button in ActionBar
+```typescript
+// Inside typescript ActionBarComponent class
+
+@Input() showBackButton = true;
+
+    constructor(rivate router: RouterExtensions) { }
+
+    get canGoBack() {
+        return this.router.canGoBack() && this.showBackButton;
+    }
+```
+```html
+<ns-action-bar
+    title="Today's Challenge"
+    [showBackButton]="false"
+></ns-action-bar>
+```
+
+
 ## # Platform Recognition
 To detect, whether you are on a Android or iOS device only (to affect only specific styles of functionality)
 
@@ -225,6 +254,54 @@ export class AnyComponent {
 
 }
 
+```
+## # CSS, Styling & Theming
+### Selectors
+- type,
+- .class,
+- #id,
+- hierarchical .selectors,
+- [attribute],
+- :pseudo (only :highlighted and :disabled)
+
+### Properties
+- most common ones
+
+### Platform Specific Styles
+1. platform-specific **stylesheets**,
+   - `styles.component.ios.css`,
+   - `styles.component.android.css`
+1. platform-specific **markup blocks**,
+   - `<ios> ... </ios>`,
+   - `<android> ... </android>`
+1. platform-specific **attributes**,
+   - not limited only to style attribute,
+   - `<Label ios:style="...">`,
+   - `<Label android:style="...">`
+1. platform-specific **CSS rules** _requires plugin_
+   - `.ios .mystyle { ... }`,
+   - `.android .mystyle { ... },`
+
+### Global Specific-platform Stylesheets
+- delete _app.css_,
+- create:
+  - app.ios.css,
+  - app.android.css,
+  - app.common.css,
+- import _app.common.css_ to the platform specific stylesheets
+
+### Component Specific-platform Stylesheets
+- delete _xxx.component.css_,
+- create:
+  - xxx.component.ios.css,
+  - xxx.component.ioandroids.css,
+  - xxx.component.common.css,
+- in **.ts file**, define **common stylesheet**:
+```typescript
+styleUrls: [
+  './xxx.component.common.css', // only common stylesheet to add
+  './xxx.component.css' // Nativescript compiles ios and android to this
+]
 ```
 
 

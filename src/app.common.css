@@ -1,0 +1,23 @@
+@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/default.css";
+
+GridLayout.primary,
+FlexboxLayout.primary,
+StackLayout.primary {
+    margin-top: 30;
+}
+
+.drawer-container {
+  background: linear-gradient(140deg, #5c3fa0, rgb(218, 8, 61));
+  padding-top: 50;
+  flex-direction: column;
+}
+
+.btn {
+  border-width: 5;
+  color: white;
+  font-size: 16;
+  width: 90%;
+  border-radius: 30%;
+  height: 45;
+}

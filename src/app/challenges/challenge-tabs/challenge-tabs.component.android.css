@@ -1,0 +1,12 @@
+TabView {
+  /* Used to be in .html file as attributes
+
+  <TabView
+    androidSelectedTabHighlightColor="purple"
+    selectedTabTextColor="purple"
+  >
+  */
+    android-selected-tab-highlight-color: purple;
+    selected-tab-text-color: purple;
+    tab-text-color: rgb(211, 158, 211);
+  }
