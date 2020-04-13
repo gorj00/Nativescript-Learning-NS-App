@@ -1,0 +1,29 @@
+@import '~@nativescript/theme/scss/variables/forest';
+
+$primary: #006968;
+$secondary: lighten($primary, 10);
+$disabled: #ccc;
+
+/* The variables are loaded before the Core styles */
+@import '~@nativescript/theme/index';
+@import '~@nativescript/theme/core';
+
+ActionBar {
+  background: $primary;
+  color: white;
+}
+
+.drawer-container {
+  background: linear-gradient(240deg, #006968, #0c8a79);
+  padding-top: 50;
+  flex-direction: column;
+}
+
+.btn {
+  border-width: 5;
+  color: white;
+  font-size: 17;
+  width: 90%;
+  border-radius: 30%;
+  height: 45;
+}
