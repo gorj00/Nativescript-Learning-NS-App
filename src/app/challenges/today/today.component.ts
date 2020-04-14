@@ -9,6 +9,10 @@ export class TodayComponent implements OnInit {
 
   constructor() { }
 
+  onActionSelected(action: 'complete' | 'fail' | 'cancel') {
+    console.log('today ', action);
+  }
+
   ngOnInit(): void {
   }
 

@@ -9,11 +9,9 @@ import { ModalDialogParams } from 'nativescript-angular/modal-dialog';
 export class DayModalComponent implements OnInit {
   loadedDate: Date;
 
-  // Retriving parameters
   constructor(private modalParams: ModalDialogParams) {}
 
-  onHandleInput(action: string) {
-    // Closing the modal
+  onHandleInput(action: 'complete' | 'fail' | 'cancel') {
     this.modalParams.closeCallback(action);
   }
 
