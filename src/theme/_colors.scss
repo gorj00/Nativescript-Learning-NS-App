@@ -1,0 +1,10 @@
+@import '~@nativescript/theme/scss/variables/forest';
+
+$primary: #006968;
+$secondary: lighten($primary, 10);
+$disabled: #ccc;
+
+$success: #15a8a6;
+$failure: #c74b4b;
+
+$grey: #8f8f8f;

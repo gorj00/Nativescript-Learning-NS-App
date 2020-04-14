@@ -1,0 +1,48 @@
+@import '../../../theme/colors';
+
+.page {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20;
+}
+
+.body {
+  color: $grey;
+}
+
+.week-day-label {
+  color: $secondary;
+  font-weight: bold;
+  margin: 15 0;
+}
+
+.day {
+  justify-content: center;
+  align-items: center;
+  width: 40;
+  height: 40;
+  margin: 10;
+  border-color: #c0ebea;
+  border-width: 1;
+  border-radius: 50%;
+  color: $secondary;
+  font-weight: bold;
+}
+
+.completed {
+  background: $success;
+  color: $white;
+}
+
+.failed {
+  background: $failure;
+  color: $white;
+  border-color: #fda1a1;
+}
+
+.not-settable {
+  background: #ccc;
+  color: #535353;
+  border-color: #b8b8b8;
+}

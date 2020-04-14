@@ -1,0 +1,30 @@
+/* Add mobile styles for the component here.  */
+@import '../../../theme/colors';
+
+FlexboxLayout {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 300;
+  margin: 20 0;
+}
+
+.btn-success {
+  background: $success;
+  border-color: $success;
+  color: $white;
+}
+
+.btn-failure {
+  background: $failure;
+  border-color: $failure;
+  color: $white;
+}
+
+.btn-flat {
+  background: $white;
+  color: #808080;
+}

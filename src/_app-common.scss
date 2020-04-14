@@ -1,16 +1,19 @@
 @import '~@nativescript/theme/scss/variables/forest';
 
-$primary: #006968;
-$secondary: lighten($primary, 10);
-$disabled: #ccc;
+/* Import colors from custom theme */
+@import './theme/colors';
 
 /* The variables are loaded before the Core styles */
 @import '~@nativescript/theme/index';
-@import '~@nativescript/theme/core';
+// @import '~@nativescript/theme/forest';
 
 ActionBar {
   background: $primary;
   color: white;
+}
+
+.main-content {
+  margin-top: 15;
 }
 
 .drawer-container {
@@ -21,9 +24,35 @@ ActionBar {
 
 .btn {
   border-width: 5;
-  color: white;
+  color: $white;
   font-size: 17;
   width: 90%;
   border-radius: 30%;
   height: 45;
+}
+
+.form {
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-field {
+  width: 80%;
+
+  .label {
+    font-weight: bold;
+  }
+
+  .input {
+    border-bottom-width: 2;
+    color: $primary;
+    width: 100%;
+  }
+
+}
+
+.h1 {
+  color: lighten($primary, 7);
+  font-weight: bold;
 }

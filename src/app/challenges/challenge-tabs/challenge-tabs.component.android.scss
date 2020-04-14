@@ -1,0 +1,8 @@
+@import '../../../theme/colors';
+
+TabView {
+    android-selected-tab-highlight-color: $primary;
+    selected-tab-text-color: $primary;
+    tab-text-color: $secondary;
+  }
+

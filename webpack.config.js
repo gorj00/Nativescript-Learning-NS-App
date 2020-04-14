@@ -260,18 +260,16 @@ module.exports = env => {
                     ]
                 },
                 {
-                  test: /\.scss$/,
+                  test: /[\/|\\]app\.scss$/,
                   use: [
-                      "nativescript-dev-webpack/css2json-loader",
+                      "nativescript-dev-webpack/style-hot-loader",
                       {
-                          loader: "sass-loader",
-                          options: {
-                              implementation: require("sass")
-                          }
-                      }
+                          loader: "nativescript-dev-webpack/css2json-loader",
+                          options: { useForImports: true }
+                      },
+                      "sass-loader"
                   ]
                 },
-
                 // Angular components reference css files and their imports using raw-loader
                 { test: /\.css$/, exclude: /[\/|\\]app\.css$/, use: "raw-loader" },
                 { test: /\.scss$/, exclude: /[\/|\\]app\.scss$/, use: ["raw-loader", "resolve-url-loader", "sass-loader"] },
