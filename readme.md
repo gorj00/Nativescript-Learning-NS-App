@@ -7,6 +7,9 @@ tns run adnroid --bundle
 
 # For debugging
 tns debug android --bundle
+
+# For loading all the resources
+tns prepare android
 ```
 - `android` is interchangeable for `ios`
 

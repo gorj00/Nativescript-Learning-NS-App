@@ -3,7 +3,10 @@
   [showBackButton]="false"
 ></ns-action-bar>
 <!-- transition property where nsRouterLink -->
-<ns-challenge-actions
-  (actionSelect)="onActionSelected($event)"
-  cancelText="Reset"
-></ns-challenge-actions>
+<GridLayout>
+  <!-- By default, generates one cell full width and height - image covers -->
+  <ns-challenge-actions
+    (actionSelect)="onActionSelected($event)"
+    cancelText="Reset"
+  ></ns-challenge-actions>
+</GridLayout>

@@ -1,10 +1,13 @@
 <TabView
   androidTabsPosition="bottom">
-  <StackLayout *tabItem="{ title: 'Today' }">
-    <!-- Action bar rerendered only with a new page -->
+  <StackLayout *tabItem="{
+    title: 'Today', iconSource: 'res://check'
+  }">
     <page-router-outlet name="today"></page-router-outlet>
   </StackLayout>
-  <StackLayout *tabItem="{ title: 'Current Challenge' }">
+  <StackLayout *tabItem="{
+    title: 'Current Challenge', iconSource: 'res://trophy'
+  }">
     <page-router-outlet name="current-challenge"></page-router-outlet>
   </StackLayout>
 </TabView>

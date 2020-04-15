@@ -8,18 +8,26 @@
     (tap)="onGoBack()"
   ></NavigationButton>
   <!-- Android specific menu icon (left) -->
-  <NavigationButton
+  <!-- <NavigationButton
     *ngIf="android && hasMenu"
     icon="res://menu_black"
     (tap)="onToggleMenu()"
-  ></NavigationButton>
+  ></NavigationButton> -->
+  <NavigationButton
+    *ngIf="android && hasMenu"
+    (tap)="onToggleMenu()"
+    icon="font://&#xf0c9;"
+    class="fa hamburger"
+  >
+    <!-- <Label text="&#xf0c9;" class="fa m-5"></Label> -->
+  </NavigationButton>
   <!-- iOS specific menu icon (left), Android (right) -->
   <ActionItem
     *ngIf="!android && hasMenu"
     ios.position="left"
     (tap)="onToggleMenu()"
   >
-    <Label text="Menu"></Label>
+    <Label text="&#xf0c9;" class="fa m-5"></Label>
   </ActionItem>
   <!-- Transclusion -->
   <ng-content></ng-content>

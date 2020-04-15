@@ -1,12 +1,20 @@
 <ns-action-bar title="Current Challenge" [showBackButton]="false">
   <!-- Transclusion with ng-content -->
-  <ActionItem>
-    <Label text="Replace" ios.position="right" android.position="actionBar" nsRouterLink="/challenges/replace"
-      transition="slideLeft"></Label>
+  <ActionItem
+    ios.position="right"
+    android.position="actionBar"
+    nsRouterLink="/challenges/replace"
+    transition="slideLeft"
+  >
+    <Label text="&#xf0fe;" ios:class="fa" android:class="fa p-5"></Label>
   </ActionItem>
-  <ActionItem>
-    <Label text="Edit" ios.position="right" android.position="actionBar" nsRouterLink="/challenges/edit"
-      transition="slideLeft"></Label>
+  <ActionItem
+    ios.position="right"
+    android.position="actionBar"
+    nsRouterLink="/challenges/edit"
+    transition="slideLeft"
+  >
+    <Label text="&#xf044;" ios:class="fa" android:class="fa p-5"></Label>
   </ActionItem>
 </ns-action-bar>
 <ScrollView>
