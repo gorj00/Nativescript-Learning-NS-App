@@ -4,6 +4,7 @@ import { NativeScriptCommonModule } from 'nativescript-angular/common';
 import { SharedModule } from '~/app/shared/shared.module';
 import { NativeScriptRouterModule } from 'nativescript-angular/router';
 import { Routes } from '@angular/router';
+import { NativeScriptFormsModule } from 'nativescript-angular/forms';
 
 const routes: Routes = [{ path: '', component: ChallengeEditComponent }];
 
@@ -16,6 +17,7 @@ const routes: Routes = [{ path: '', component: ChallengeEditComponent }];
     // Unlocks ns-router-link and such
     // NativeScriptRouterModule,
     SharedModule,
+    NativeScriptFormsModule,
   ],
   schemas: [NO_ERRORS_SCHEMA],
 })

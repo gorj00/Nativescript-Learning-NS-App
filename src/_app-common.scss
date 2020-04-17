@@ -30,11 +30,28 @@ ActionBar {
 
 .btn {
   border-width: 5;
-  color: $white;
   font-size: 17;
   width: 90%;
   border-radius: 30%;
   height: 45;
+  color: $white;
+}
+
+.btn-success {
+  background: $success;
+  border-color: $success;
+  color: $white;
+}
+
+.btn-failure {
+  background: $failure;
+  border-color: $failure;
+  color: $white;
+}
+
+.btn-flat {
+  background: $white;
+  color: #9c9c9c;
 }
 
 .form {
@@ -44,19 +61,30 @@ ActionBar {
 }
 
 .form {
-  
+
   .input-field {
     width: 80%;
 
     .label {
+      color: $primary;
       font-weight: bold;
-      font-family: 'Oswald', 'Oswald-Regular', 'Oswald-Bold';
+      // font-family: 'Oswald', 'Oswald-Regular', 'Oswald-Bold';
     }
 
     .input {
       border-bottom-width: 2;
-      color: $primary;
+      border-bottom-color: $primary;
+      color: black;
       width: 100%;
+    }
+
+    label.invalid {
+      color: red;
+    }
+
+    .input.ng-invalid.ng-touched {
+      border-bottom-color: red;
+      color: red;
     }
 
   }
@@ -65,5 +93,6 @@ ActionBar {
 .h1 {
   color: lighten($primary, 7);
   font-weight: bold;
-  font-family: 'Oswald', 'Oswald-Regular', 'Oswald-Bold';
+  // font-family: 'Oswald', 'Oswald-Regular', 'Oswald-Bold';
 }
+

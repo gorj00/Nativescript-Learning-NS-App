@@ -39,7 +39,7 @@
         [col]="i"
       ></Label>
       <FlexboxLayout
-        class="day completed "
+        class="day not-settable"
         *ngFor="let day of days; let i = index"
         [row]="getRow(i, day)"
         [col]="day.dayInWeek"

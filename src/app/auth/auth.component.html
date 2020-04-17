@@ -1,13 +1,65 @@
 <ns-action-bar
-  title="Login"
+  [title]="isLogin ? 'Sign Up' : 'Login'"
   [showBackButton]="false"
   [hasMenu]="false"
 ></ns-action-bar>
-<StackLayout class="main-content">
-  <Button
-    text="Login"
-    nsRouterLink="/challenges"
-    class="btn -primary -rounded-lg"
-    [clearHistory]="true"
-  ></Button>
-</StackLayout>
+
+<FlexboxLayout [formGroup]="form">
+  <StackLayout class="main-content form">
+    <StackLayout class="input-field">
+      <Label
+        class="label"
+        text="E-mail"
+        [ngClass]="{ invalid: !emailControlIsValid }"
+      ></Label>
+      <TextField
+        class="input"
+        returnKeyType="next"
+        keyboardType="email"
+        [autocorrect]="false"
+        autocapitalizationType="none"
+        formControlName="email"
+      ></TextField>
+      <Label
+        *ngIf="!emailControlIsValid"
+        text="Enter a valid email address!"
+        [ngClass]="{ invalid: !emailControlIsValid }"
+      ></Label>
+    </StackLayout>
+    <StackLayout class="input-field">
+      <Label
+        class="label"
+        text="Password"
+        [ngClass]="{ invalid: !passwordControlisValid }"
+      ></Label>
+      <TextField
+        class="input"
+        returnKeyType="done"
+        [autocorrect]="false"
+        autocapitalization="none"
+        [secure]="true"
+        hint="Min 6 characters!"
+        formControlName="password"
+      ></TextField>
+      <Label
+        *ngIf="!passwordControlisValid"
+        text="Enter your password!"
+        [ngClass]="{ invalid: !passwordControlisValid }"
+      ></Label>
+    </StackLayout>
+    <StackLayout class="buttons-section">
+      <Button
+        [text]="isLogin ? 'Login' : 'Signup'"
+        class="btn btn-success"
+        (tap)="onSubmit()"
+        [isEnabled]="form.valid"
+      ></Button>
+      <Button
+        class="btn btn-flat"
+        [text]="isLogin ? 'Signup instead' : 'Login instead'"
+        (tap)="onSwitch()"
+      ></Button>
+    </StackLayout>
+  </StackLayout>
+</FlexboxLayout>
+
